@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataBasePetShop.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataBasePetShopStoreContainer">
+    <EntitySet Name="Funcionarios" EntityType="DataBasePetShop.Store.Funcionarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Produtos" EntityType="DataBasePetShop.Store.Produtos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clientes" EntityType="DataBasePetShop.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Animais" EntityType="DataBasePetShop.Store.Animais" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Agendas" EntityType="DataBasePetShop.Store.Agendas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClienteAnimal" EntityType="DataBasePetShop.Store.ClienteAnimal" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ClienteAnimal_Cliente" Association="DataBasePetShop.Store.FK_ClienteAnimal_Cliente">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="ClienteAnimal" EntitySet="ClienteAnimal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteAnimal_Animal" Association="DataBasePetShop.Store.FK_ClienteAnimal_Animal">
+      <End Role="Animal" EntitySet="Animais" />
+      <End Role="ClienteAnimal" EntitySet="ClienteAnimal" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Funcionarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cpf" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cargo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salario" Type="float" Nullable="false" />
+    <Property Name="Tipo" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produtos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Categoria" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Valor" Type="float" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cpf" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Animal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Animais">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Raca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Porte" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Peso" Type="float" Nullable="false" />
+    <Property Name="Cor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Agendas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Horario" Type="time" Nullable="false" />
+    <Property Name="Especialidade" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClienteAnimal">
+    <Key>
+      <PropertyRef Name="Cliente_Id" />
+      <PropertyRef Name="Animal1_Id" />
+    </Key>
+    <Property Name="Cliente_Id" Type="int" Nullable="false" />
+    <Property Name="Animal1_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ClienteAnimal_Cliente">
+    <End Role="Cliente" Type="DataBasePetShop.Store.Clientes" Multiplicity="1" />
+    <End Role="ClienteAnimal" Type="DataBasePetShop.Store.ClienteAnimal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClienteAnimal">
+        <PropertyRef Name="Cliente_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteAnimal_Animal">
+    <End Role="ClienteAnimal" Type="DataBasePetShop.Store.ClienteAnimal" Multiplicity="*" />
+    <End Role="Animal" Type="DataBasePetShop.Store.Animais" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClienteAnimal">
+        <PropertyRef Name="Animal1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataBasePetShop" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DataBasePetShopContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Funcionarios" EntityType="DataBasePetShop.Funcionario" />
+          <EntitySet Name="Produtos" EntityType="DataBasePetShop.Produto" />
+          <EntitySet Name="Clientes" EntityType="DataBasePetShop.Cliente" />
+          <EntitySet Name="Animais" EntityType="DataBasePetShop.Animal" />
+          <EntitySet Name="Agendas" EntityType="DataBasePetShop.Agenda" />
+          <AssociationSet Name="ClienteAnimal" Association="DataBasePetShop.ClienteAnimal">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Animal" EntitySet="Animais" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" />
+          <Property Name="Cargo" Type="String" Nullable="false" />
+          <Property Name="Salario" Type="Double" Nullable="false" />
+          <Property Name="Tipo" Type="Binary" Nullable="false" />
+          <Property Name="Senha" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Categoria" Type="String" Nullable="false" />
+          <Property Name="Valor" Type="Double" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="Animal" Type="String" Nullable="false" />
+          <NavigationProperty Name="Animal1" Relationship="DataBasePetShop.ClienteAnimal" FromRole="Cliente" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Raca" Type="String" Nullable="false" />
+          <Property Name="Porte" Type="String" Nullable="false" />
+          <Property Name="Peso" Type="Double" Nullable="false" />
+          <Property Name="Cor" Type="String" Nullable="false" />
+          <Property Name="Dono" Type="String" Nullable="false" />
+          <Property Name="Idade" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="DataBasePetShop.ClienteAnimal" FromRole="Animal" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <Property Name="Horario" Type="Time" Nullable="false" />
+          <Property Name="Especialidade" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="ClienteAnimal">
+          <End Type="DataBasePetShop.Cliente" Role="Cliente" Multiplicity="*" />
+          <End Type="DataBasePetShop.Animal" Role="Animal" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataBasePetShopStoreContainer" CdmEntityContainer="DataBasePetShopContainer">
+    <EntitySetMapping Name="Funcionarios">
+      <EntityTypeMapping TypeName="IsTypeOf(DataBasePetShop.Funcionario)">
+        <MappingFragment StoreEntitySet="Funcionarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produtos">
+      <EntityTypeMapping TypeName="IsTypeOf(DataBasePetShop.Produto)">
+        <MappingFragment StoreEntitySet="Produtos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(DataBasePetShop.Cliente)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Animal" ColumnName="Animal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Animais">
+      <EntityTypeMapping TypeName="IsTypeOf(DataBasePetShop.Animal)">
+        <MappingFragment StoreEntitySet="Animais">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Raca" ColumnName="Raca" />
+          <ScalarProperty Name="Porte" ColumnName="Porte" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Cor" ColumnName="Cor" />
+          <ScalarProperty Name="Dono" ColumnName="Dono" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agendas">
+      <EntityTypeMapping TypeName="IsTypeOf(DataBasePetShop.Agenda)">
+        <MappingFragment StoreEntitySet="Agendas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Horario" ColumnName="Horario" />
+          <ScalarProperty Name="Especialidade" ColumnName="Especialidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ClienteAnimal" TypeName="DataBasePetShop.ClienteAnimal" StoreEntitySet="ClienteAnimal">
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="Id" ColumnName="Cliente_Id" />
+      </EndProperty>
+      <EndProperty Name="Animal">
+        <ScalarProperty Name="Id" ColumnName="Animal1_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
