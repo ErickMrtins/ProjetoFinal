@@ -19,7 +19,7 @@ namespace PetShop
         public string Cpf { get; set; }
         public string Cargo { get; set; }
         public double Salario { get; set; }
-        public byte[] Tipo { get; set; }
+        public bool Tipo { get; set; }
         public string Senha { get; set; }
     }
 }

@@ -30,7 +30,7 @@
     <Property Name="Cpf" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cargo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Salario" Type="float" Nullable="false" />
-    <Property Name="Tipo" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Tipo" Type="bit" Nullable="false" />
     <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Produtos">
@@ -132,7 +132,7 @@
           <Property Name="Cpf" Type="String" Nullable="false" />
           <Property Name="Cargo" Type="String" Nullable="false" />
           <Property Name="Salario" Type="Double" Nullable="false" />
-          <Property Name="Tipo" Type="Binary" Nullable="false" />
+          <Property Name="Tipo" Type="Boolean" Nullable="false" />
           <Property Name="Senha" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Produto">

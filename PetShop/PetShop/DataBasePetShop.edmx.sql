@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/25/2018 00:45:47
+-- Date Created: 09/25/2018 19:52:48
 -- Generated from EDMX file: C:\Users\EHQSMOVEL002\Source\Repos\ProjetoFinal\PetShop\PetShop\DataBasePetShop.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,35 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ClienteAnimal_Cliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ClienteAnimal] DROP CONSTRAINT [FK_ClienteAnimal_Cliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClienteAnimal_Animal]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ClienteAnimal] DROP CONSTRAINT [FK_ClienteAnimal_Animal];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Funcionarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Funcionarios];
+GO
+IF OBJECT_ID(N'[dbo].[Produtos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Produtos];
+GO
+IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Clientes];
+GO
+IF OBJECT_ID(N'[dbo].[Animais]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Animais];
+GO
+IF OBJECT_ID(N'[dbo].[Agendas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Agendas];
+GO
+IF OBJECT_ID(N'[dbo].[ClienteAnimal]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClienteAnimal];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -34,7 +58,7 @@ CREATE TABLE [dbo].[Funcionarios] (
     [Cpf] nvarchar(max)  NOT NULL,
     [Cargo] nvarchar(max)  NOT NULL,
     [Salario] float  NOT NULL,
-    [Tipo] varbinary(max)  NOT NULL,
+    [Tipo] bit  NOT NULL,
     [Senha] nvarchar(max)  NOT NULL
 );
 GO

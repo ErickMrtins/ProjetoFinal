@@ -13,10 +13,10 @@
         <Label x:Name="lblTitulo" Content="Pet Shop Super Pet" HorizontalAlignment="Left" Margin="174,10,0,0" VerticalAlignment="Top" FontSize="48" Width="430" FontStyle="Oblique"/>
         <Label x:Name="lblLogin" Content="Login" HorizontalAlignment="Left" Margin="351,120,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="390,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnLogar" Content="Entrar" HorizontalAlignment="Left" Margin="321,268,0,0" VerticalAlignment="Top" Width="189" FontSize="16"/>
+        <Button x:Name="btnLogar" Content="Entrar" HorizontalAlignment="Left" Margin="321,268,0,0" VerticalAlignment="Top" Width="189" FontSize="16" Click="btnLogar_Click"/>
         <Label x:Name="lblUsuario" Content="Usuário" HorizontalAlignment="Left" Margin="321,185,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="lblSenha" Content="Senha" HorizontalAlignment="Left" Margin="321,215,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="390,216,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="390,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

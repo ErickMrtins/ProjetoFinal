@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShop.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,24 @@ namespace PetShop
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnLogar_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.FuncionarioController controller = new Controller.FuncionarioController();
+            Funcionario funcionario = new Funcionario();
+            
+
+
+            if(txtUsuario.Text.Equals(funcionario.Nome) && txtPassword.Text.Equals(funcionario.Senha))
+            {
+                MenuPrincipal janela = new MenuPrincipal();
+                janela.Show();
+            }
+            else
+            {
+                MessageBox.Show("Erro de Login");
+            }
         }
     }
 }
