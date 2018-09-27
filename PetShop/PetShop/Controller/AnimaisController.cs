@@ -6,41 +6,34 @@ using System.Threading.Tasks;
 
 namespace PetShop.Controller
 {
-    class FuncionarioController
+    class AnimaisController
     {
-        public void inserir(Funcionario funcionario)
+        public void Inserir(Animal animal)
         {
             DataBasePetShopContainer contexto = new DataBasePetShopContainer();
-            contexto.Funcionarios.Add(funcionario);
+            contexto.Animais.Add(animal);
             contexto.SaveChanges();
-            
         }
 
-        public List<Funcionario> ListarTodosFuncionarios()
+        public List<Animal> ListarTodosAnimais()
         {
             DataBasePetShopContainer contexto = new DataBasePetShopContainer();
-            return contexto.Funcionarios.ToList();
+            return contexto.Animais.ToList();
         }
 
-        public Funcionario BuscarPorId(int id)
+        public Animal BuscarPorId(int id)
         {
             DataBasePetShopContainer contexto = new DataBasePetShopContainer();
-            return contexto.Funcionarios.Find(id);
+            return contexto.Animais.Find(id);
         }
 
-        public Funcionario BuscarPorNome(String nome)
-        {
-            DataBasePetShopContainer contexto = new DataBasePetShopContainer();
-            return contexto.Funcionarios.Find(nome);
-        }
-
-        public List<Funcionario> PesquisarPorFirstName(string firstName)
+        public List<Animal> PesquisarPorName(string Name)
         {
             DataBasePetShopContainer contexto = new DataBasePetShopContainer();
 
 
-            var lista = from p in contexto.Funcionarios
-                        where p.Nome == firstName
+            var lista = from p in contexto.Animais
+                        where p.Nome == Name
                         select p;
 
             return lista.ToList();
@@ -48,15 +41,14 @@ namespace PetShop.Controller
 
         void Excluir(int id)
         {
-            Funcionario pExcluir = BuscarPorId(id);
+            Animal pExcluir = BuscarPorId(id);
 
             if (pExcluir != null)
             {
                 DataBasePetShopContainer contexto = new DataBasePetShopContainer();
-                contexto.Funcionarios.Remove(pExcluir);
+                contexto.Animais.Remove(pExcluir);
                 contexto.SaveChanges();
             }
         }
-
     }
 }

@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="CadastroCliente" Height="450" Width="800">
     <Grid>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="263,31,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCadastroClientes" Content="Cadastro de Clientes" HorizontalAlignment="Left" Margin="224,10,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="lblNome" Content="Nome:" HorizontalAlignment="Left" Margin="252,135,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCpf" Content="CPF:" HorizontalAlignment="Left" Margin="252,167,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblEndereco" Content="Endereço:" HorizontalAlignment="Left" Margin="252,198,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTelefone" Content="Telefone:" HorizontalAlignment="Left" Margin="252,229,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblAnimal" Content="Animal:" HorizontalAlignment="Left" Margin="252,259,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnCadastrarCliente" Content="Cadastrar" HorizontalAlignment="Left" Margin="252,332,0,0" VerticalAlignment="Top" Width="179"/>
+        <TextBox x:Name="txtNomeCliente" HorizontalAlignment="Left" Height="23" Margin="311,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtCpfCliente" HorizontalAlignment="Left" Height="23" Margin="311,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEnderecoCliente" HorizontalAlignment="Left" Height="23" Margin="311,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTelefonCliente" HorizontalAlignment="Left" Height="23" Margin="311,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAnimalCliente" HorizontalAlignment="Left" Height="23" Margin="311,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

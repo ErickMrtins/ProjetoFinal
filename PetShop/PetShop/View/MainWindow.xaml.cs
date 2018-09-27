@@ -32,8 +32,7 @@ namespace PetShop
             Funcionario funcionario = new Funcionario();
             
 
-
-            if(txtUsuario.Text.Equals(funcionario.Nome) && txtPassword.Text.Equals(funcionario.Senha))
+            if(txtUsuario.Text.Equals("admin") && txtPassword.Text.Equals("admin"))
             {
                 MenuPrincipal janela = new MenuPrincipal();
                 janela.Show();

@@ -1,0 +1,28 @@
+﻿<Window x:Class="PetShop.View.CadastroAnimais"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetShop.View"
+        mc:Ignorable="d"
+        Title="CadastroAnimais" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lblCadastroAnimal" Content="Cadastro de Animal" HorizontalAlignment="Left" Margin="231,10,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="lblNomeAnimal" Content="Nome:" HorizontalAlignment="Left" Margin="231,105,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRaca" Content="Raça:" HorizontalAlignment="Left" Margin="232,136,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPorte" Content="Porte:" HorizontalAlignment="Left" Margin="232,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,1.033"/>
+        <Label x:Name="lblPeso" Content="Peso:" HorizontalAlignment="Left" Margin="232,198,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCor" Content="Cor:" HorizontalAlignment="Left" Margin="232,227,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDono" Content="Dono:" HorizontalAlignment="Left" Margin="231,255,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblIdade" Content="Idade: " HorizontalAlignment="Left" Margin="232,283,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNomeAnimal" HorizontalAlignment="Left" Height="23" Margin="282,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="txtRacaAnimal" HorizontalAlignment="Left" Height="23" Margin="282,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="txtPorteAnimal" HorizontalAlignment="Left" Height="23" Margin="282,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="txtPesoAnimal" HorizontalAlignment="Left" Height="23" Margin="282,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="txtCorPelagem" HorizontalAlignment="Left" Height="23" Margin="282,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="txtDonoAnimal" HorizontalAlignment="Left" Height="23" Margin="282,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="txtIdadeAnimal" HorizontalAlignment="Left" Height="23" Margin="282,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <Button x:Name="btnCadastrarAnimal" Content="Cadastrar" HorizontalAlignment="Left" Margin="232,339,0,0" VerticalAlignment="Top" Width="320"/>
+
+    </Grid>
+</Window>

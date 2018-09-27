@@ -1,0 +1,22 @@
+﻿<Window x:Class="PetShop.View.CadastroProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetShop.View"
+        mc:Ignorable="d"
+        Title="CadastroProduto" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lblCadastroProduto" Content="Cadastro Produto" HorizontalAlignment="Left" Margin="252,10,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="lblDescricao" Content="Descrição: " HorizontalAlignment="Left" Margin="252,101,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCategoria" Content="Categoria: " HorizontalAlignment="Left" Margin="252,129,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblValor" Content="Valor:" HorizontalAlignment="Left" Margin="252,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCodigo" Content="Código:" HorizontalAlignment="Left" Margin="252,185,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="319,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="txtCategoria" HorizontalAlignment="Left" Height="23" Margin="319,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="319,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="319,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+        <Button x:Name="btnCadastrarProduto" Content="Cadastrar" HorizontalAlignment="Left" Margin="252,246,0,0" VerticalAlignment="Top" Width="290"/>
+
+    </Grid>
+</Window>

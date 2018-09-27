@@ -8,12 +8,11 @@
         Title="MenuPrincipal" Height="450" Width="800">
     <Grid>
         <Label x:Name="lblMenuPrincipal" Content="Menu Principal" HorizontalAlignment="Left" Margin="217,10,0,0" VerticalAlignment="Top" FontSize="48"/>
-        <Button x:Name="btnCadastrarFuncionarios" Content="Funcionários" HorizontalAlignment="Left" Margin="114,151,0,0" VerticalAlignment="Top" Width="151" Height="56" Click="btnCadastrarFuncionarios_Click"/>
-        <Button x:Name="btnCadastrarAnimais" Content="Animais" HorizontalAlignment="Left" Margin="317,151,0,0" VerticalAlignment="Top" Width="151" Height="56"/>
-        <Button x:Name="btnCadastrarCliente" Content="Cliente" HorizontalAlignment="Left" Margin="515,151,0,0" VerticalAlignment="Top" Width="151" Height="56"/>
-        <Button x:Name="btnProdutos" Content="Produtos" HorizontalAlignment="Left" Margin="114,242,0,0" VerticalAlignment="Top" Width="151" Height="56"/>
-        <Button x:Name="btnAgendamentos" Content="Agendamento" HorizontalAlignment="Left" Margin="317,242,0,0" VerticalAlignment="Top" Width="151" Height="56"/>
-        <Button x:Name="btnFechar" Content="Fechar" HorizontalAlignment="Left" Margin="515,242,0,0" VerticalAlignment="Top" Width="151" Height="56"/>
+        <Button x:Name="btnCadastrarFuncionarios" Content="Funcionários" HorizontalAlignment="Left" Margin="72,174,0,0" VerticalAlignment="Top" Width="151" Height="56" Click="btnCadastrarFuncionarios_Click"/>
+        <Button x:Name="btnCadastrarAnimais" Content="Animais" HorizontalAlignment="Left" Margin="228,174,0,0" VerticalAlignment="Top" Width="151" Height="56" Click="btnCadastrarAnimais_Click"/>
+        <Button x:Name="btnCadastrarCliente" Content="Cliente" HorizontalAlignment="Left" Margin="384,174,0,0" VerticalAlignment="Top" Width="151" Height="56" Click="btnCadastrarCliente_Click"/>
+        <Button x:Name="btnProdutos" Content="Produtos" HorizontalAlignment="Left" Margin="540,174,0,0" VerticalAlignment="Top" Width="151" Height="56" Click="btnProdutos_Click"/>
+        <Button x:Name="btnFechar" Content="Fechar" HorizontalAlignment="Left" Margin="228,254,0,0" VerticalAlignment="Top" Width="307" Height="56"/>
 
     </Grid>
 </Window>
